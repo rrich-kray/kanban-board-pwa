@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  /* background: rgba(138, 210, 237, 0.25) */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.col {
+  flex: 1;
+  min-width: 500px;
+  margin: 20px;
+  border-radius: 12px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: rgba(226, 215, 165, 0.25);
+  overflow: scroll
+}
+
+.col h1 {
+  /* position: fixed; */
+}
+
+
+.tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.task {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 1fr;
+  width: 90%;
+  /* height: 50px; */
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background:rgba(155, 151, 151, 0.25);
+  padding: 20px
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.task-name {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column-start: 3;
+  grid-column-end: 3
+}
+
+.arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1
+}
+
+.add-task-btn {
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
   }
-  to {
-    transform: rotate(360deg);
+
+  .col {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0
   }
 }
