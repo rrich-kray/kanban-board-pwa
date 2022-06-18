@@ -20,7 +20,10 @@ const Modal = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const newTask = {
-      id: tasks.length === 0 ? 1 : (tasks[tasks.length - 1].id += 1),
+      id:
+        tasks.length === 0
+          ? 1
+          : (tasks.sort((a, b) => a.id - b.id)[tasks.length - 1].id += 1),
       name: formState.task_name,
       description: formState.task_description,
       status: parseInt(formState.task_status),

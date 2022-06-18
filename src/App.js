@@ -32,9 +32,16 @@ function App() {
   };
 
   const recategorize = (task, direction) => {
+    // get all tasks from localStorage
     let allTasks = JSON.parse(localStorage.getItem("allTasks"));
+    console.log(allTasks);
+    // find selected task in all tasks array
     let selectedTask = allTasks.find((i) => i.id === task.id);
-    console.log(selectedTask.status);
+    console.log(selectedTask);
+    // remove selected task from allTasks array
+    const newTasksArr = allTasks.filter((i) => i.id !== selectedTask.id);
+    console.log(newTasksArr);
+    // change status of selected task
     if (direction === "right") {
       if (selectedTask.status === 2) {
         selectedTask.status = 0;
@@ -48,8 +55,10 @@ function App() {
         selectedTask.status -= 1;
       }
     }
-    const newTasksArr = allTasks.filter((i) => i.id !== task.id);
+    // push modified task back into tasks array
     newTasksArr.push(selectedTask);
+    console.log(newTasksArr);
+    // insert the new tasks array into localStorage
     localStorage.setItem("allTasks", JSON.stringify(newTasksArr));
     window.location.replace("/");
   };

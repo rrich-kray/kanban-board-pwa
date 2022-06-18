@@ -27,3 +27,6 @@ reportWebVitals();
 // npm i serve
 // npm run build
 // server -s build OR npx serve -s build
+
+// notes:
+// ensure that you have a valid icon for installability
