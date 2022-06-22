@@ -82,7 +82,10 @@ function App() {
         <AddCircleIcon style={{ height: "100%", width: "auto" }} />
       </button>
       <div className="todo-tasks col">
-        <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Todo</h1>
+        <div className="header">
+          <img src="https://www.svgrepo.com/show/397690/red-circle.svg"></img>
+          <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Todo</h1>
+        </div>
         <ul className="tasks">
           {todoTasks &&
             todoTasks.map((task) => (
@@ -125,9 +128,12 @@ function App() {
         </ul>
       </div>
       <div className="wip-tasks col">
-        <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
-          Work-In-Progress
-        </h1>
+        <div className="header">
+          <img src="https://www.svgrepo.com/show/398719/yellow-circle.svg"></img>
+          <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
+            Work In Progress
+          </h1>
+        </div>
         <ul className="tasks">
           {wipTasks &&
             wipTasks.map((task) => (
@@ -170,7 +176,12 @@ function App() {
         </ul>
       </div>
       <div className="completed-tasks col">
-        <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Completed</h1>
+        <div className="header">
+          <img src="https://www.svgrepo.com/show/396579/green-circle.svg"></img>
+          <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
+            Completed
+          </h1>
+        </div>
         <ul className="tasks">
           {completedTasks &&
             completedTasks.map((task) => (
